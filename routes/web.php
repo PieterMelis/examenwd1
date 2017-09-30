@@ -19,5 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/wedstrijd', 'HomeController@wedstrijd');
-
 Route::get('/win', 'HomeController@win');
+
+
+Route::get('word/add', 'gameController@create');
