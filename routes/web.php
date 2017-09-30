@@ -23,3 +23,4 @@ Route::get('/win', 'HomeController@win');
 
 
 Route::get('/word/add', 'gameController@create')->name('addword');
+Route::post('/word/add', 'gameController@create')->name('addword');
