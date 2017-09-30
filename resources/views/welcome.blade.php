@@ -84,7 +84,7 @@
 
                 <div class="links">
                     <a href="{{ url('/wedstrijd') }}">Wedstrijd</a>
-                    <a href="{{ url('/winnaars') }}">Winnaars</a>
+                    <a href="{{ url('/win') }}">Winnaars</a>
                     <a href="http://www.volvo.com/home.html">Over Volvo</a>
                 </div>
             </div>

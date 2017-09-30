@@ -30,4 +30,8 @@ class HomeController extends Controller
     {
         return view('wedstrijd');
     }
+    public function win()
+    {
+        return view('win');
+    }
 }
