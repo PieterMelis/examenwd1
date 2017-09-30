@@ -22,4 +22,4 @@ Route::get('/wedstrijd', 'HomeController@wedstrijd');
 Route::get('/win', 'HomeController@win');
 
 
-Route::get('word/add', 'gameController@create');
+Route::get('/word/add', 'gameController@create')->name('addword');

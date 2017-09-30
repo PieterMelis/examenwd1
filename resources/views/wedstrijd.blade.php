@@ -5,7 +5,7 @@
               <h1>Wedstrijd</h1>
 
 
-              <form class="form-horizontal" method="POST" action="{{ route('word/add') }}">
+              <form class="form-horizontal" method="POST" action="{{ route('addword') }}">
                   {{ csrf_field() }}
 
                   <div class="form-group{{ $errors->has('word') ? ' has-error' : '' }}">
