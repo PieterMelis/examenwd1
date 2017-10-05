@@ -15,7 +15,7 @@ class Game extends Migration
      {
          Schema::create('word', function (Blueprint $table) {
              $table->increments('id');
-             $table->string('word');
+             $table->string('word', 255);
              $table->rememberToken();
              $table->timestamps();
          });

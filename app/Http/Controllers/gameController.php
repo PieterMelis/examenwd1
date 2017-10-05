@@ -7,25 +7,13 @@ use Illuminate\Http\Request;
 class gameController extends Controller
 {
 
-  
-    protected $redirectTo = '/home';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -34,10 +22,12 @@ class gameController extends Controller
     }
 
 
-    protected function create(array $data)
-    {
-        return word::create([
-            'word' => $data['word']
-        ]);
-    }
+    public function create(Request $request)
+          {
+                $word= new Word();
+                $word->word = $request->word;
+                $word->save();
+
+             return Redirect::back();
+         }
 }
