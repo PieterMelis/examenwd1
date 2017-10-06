@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 class play extends Controller
 {
 
-  **
-   * Where to redirect users after registration.
-   *
-   * @var string
-   */
   protected $redirectTo = '/home';
 
   /**

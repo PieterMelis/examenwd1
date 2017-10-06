@@ -13,7 +13,7 @@ class CreateWordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('word', function (Blueprint $table) {
+        Schema::create('words', function (Blueprint $table) {
             $table->increments('id');
             $table->string('word', 255);
             $table->rememberToken();
@@ -28,6 +28,8 @@ class CreateWordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('word');
+        Schema::create('words', function (Blueprint $table) {
+            Schema::dropIfExists('word');
+        });
     }
 }

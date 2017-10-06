@@ -8,7 +8,7 @@
     {{ Form::open(array('url' => 'word')) }}
 
     <div class="form-group">
-        {{ Form::label('word', 'Woord') }}
+        {{ Form::label('word', 'Word') }}
         {{ Form::text('word', 'word'), array('class' => 'form-control') }}
     </div>
 
