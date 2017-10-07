@@ -16,6 +16,10 @@ use Illuminate\Contracts\Support\MessageBag;
 
 class WordController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
 
@@ -41,7 +45,6 @@ class WordController extends Controller
             return Redirect::to('word/create')
                 ->withErrors($validator);
         } else {
-
             $word = new Word;
             $word->word       = Input::get('word');
             $word->save();
@@ -51,4 +54,15 @@ class WordController extends Controller
             return Redirect::to('word');
         }
     }
+
+
+
+
+
+
+
+
+
+
+
 }

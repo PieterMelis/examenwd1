@@ -23,6 +23,4 @@ Route::get('/win', 'HomeController@win');
 
 Route::resource('word','WordController');
 
-
-
 Route::get('word', 'WordController@index')->name('words');
