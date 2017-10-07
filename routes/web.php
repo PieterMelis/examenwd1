@@ -20,7 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/wedstrijd', 'HomeController@wedstrijd');
 Route::get('/win', 'HomeController@win');
+Route::get('/user_dashboard', 'HomeController@user_dashboard');
 
-Route::resource('word','WordController');
+Route::resource('word','ParticipansController');
 
-Route::get('word', 'WordController@index')->name('words');
+Route::get('word', 'ParticipansController@index')->name('words');

@@ -34,4 +34,24 @@ class HomeController extends Controller
     {
         return view('win');
     }
+    public function user_dashboard()
+    {
+        return view('user_dashboard');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

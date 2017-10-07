@@ -2,19 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
-use App\Word;
 
-use App\Http\Middleware\RedirectIfAuthenticated;
-use Illuminate\Contracts\Support\MessageBag;
-
-
-class WordController extends Controller
+class ParticipansController extends Controller
 {
     public function __construct()
     {
@@ -53,15 +43,4 @@ class WordController extends Controller
             return Redirect::to('word');
         }
     }
-
-
-
-
-
-
-
-
-
-
-
 }

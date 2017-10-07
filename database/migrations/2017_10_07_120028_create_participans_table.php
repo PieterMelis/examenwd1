@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWordsTable extends Migration
+class CreateParticipansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateWordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('participants', function (Blueprint $table) {
-         /*   $table->increments('id');
+        Schema::create('participans', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('adress');
@@ -23,7 +23,7 @@ class CreateWordsTable extends Migration
             $table->string('question');
             $table->string('ip_adress');
             $table->boolean('enabled');
-            $table->timestamps();*/
+            $table->timestamps();
         });
     }
 
@@ -34,8 +34,8 @@ class CreateWordsTable extends Migration
      */
     public function down()
     {
-       /* Schema::create('participants', function (Blueprint $table) {
+        Schema::create('participans', function (Blueprint $table) {
             Schema::dropIfExists('participants');
-        });*/
+        });
     }
 }
