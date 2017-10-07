@@ -39,12 +39,13 @@ class ParticipansController extends Controller
             return Redirect::to('word/create')
                 ->withErrors($validator);
         } else {
-            $participant = new Participant();
+            $participant             = new Participant();
             $participant->name       = Input::get('name');
             $participant->email      = Input::get('email');
             $participant->adress     = Input::get('adress');
             $participant->city       = Input::get('city');
             $participant->question   = Input::get('question');
+            $participant->word       = Input::get('word');
             $participant->ip         = Request::ip();
             $participant->save();
 

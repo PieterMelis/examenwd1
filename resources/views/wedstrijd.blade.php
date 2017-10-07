@@ -4,8 +4,7 @@
 <div class="container">
               <h1>Wedstrijd</h1>
 
-
-    {{ Form::open(array('url' => 'word')) }}
+    {{ Form::open(['url' => 'ParticipansSend']) }}
 
 
 
@@ -30,7 +29,7 @@
     </div>
 
     <div class="form-group">
-        {{ Form::label('vraag 1') }}
+        {{ Form::label('question 1') }}
         {{ Form::text('question', array('class' => 'form-control')) }}
     </div>
 
