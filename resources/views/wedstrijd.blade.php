@@ -11,27 +11,27 @@
 
     <div class="form-group">
         {{ Form::label('name', 'Name') }}
-        {{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
+        {{ Form::text('name', array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('email', 'Email') }}
-        {{ Form::email('email', Input::old('email'), array('class' => 'form-control')) }}
+        {{ Form::email('email',  array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('adress', 'Adress') }}
-        {{ Form::text('adress', Input::old('adress'), array('class' => 'form-control')) }}
+        {{ Form::text('adress', array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('city', 'City') }}
-        {{ Form::text('city', Input::old('city'), array('class' => 'form-control')) }}
+        {{ Form::text('city',  array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('vraag 1') }}
-        {{ Form::text('question', Input::old('question'), array('class' => 'form-control')) }}
+        {{ Form::text('question', array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">

@@ -13,7 +13,7 @@ class ParticipansController extends Controller
     public function index()
     {
 
-        $participants = Participant::where('enabled',1)->get();
+        $participants = Participant::All()->get();
         return view("participants")->with('participants',$participants);
 
     }
@@ -25,6 +25,11 @@ class ParticipansController extends Controller
     public function store()
     {
         $rules = array(
+            'name'       => 'required',
+            'email'      => 'required|email|unique:participants',
+            'adress'     => 'required' ,
+            'city'       => 'required',
+            'question'   => 'required',
             'word'       => 'required'
         );
         $validator = Validator::make(Input::all(), $rules);
@@ -34,13 +39,26 @@ class ParticipansController extends Controller
             return Redirect::to('word/create')
                 ->withErrors($validator);
         } else {
-            $word = new Word;
-            $word->word       = Input::get('word');
-            $word->save();
+            $participant = new Participant();
+            $participant->name       = Input::get('name');
+            $participant->email      = Input::get('email');
+            $participant->adress     = Input::get('adress');
+            $participant->city       = Input::get('city');
+            $participant->question   = Input::get('question');
+            $participant->ip         = Request::ip();
+            $participant->save();
 
 
             Session::flash('message', 'Dank u voor het meedoen');
             return Redirect::to('word');
         }
     }
+
+
+
+
+
+
+
+
 }
