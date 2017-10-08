@@ -4,7 +4,7 @@
 <div class="container">
               <h1>Wedstrijd</h1>
 
-    {{ Form::open(['url' => 'ParticipansSend']) }}
+    {{ Form::open(['url' => 'PlayerSend']) }}
 
 
 

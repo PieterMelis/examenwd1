@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
+use App\Player;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
@@ -17,8 +18,8 @@ class ParticipansController extends Controller
     public function index()
     {
 
-        $participants = Participant::All()->get();
-        return view("participants")->with('participants',$participants);
+        $participants = Player::where('enabled',1)->get();
+        return view("Players")->with('Players',Players);
 
     }
     public function create()
@@ -42,14 +43,14 @@ class ParticipansController extends Controller
             return Redirect::to('word/create')
                 ->withErrors($validator);
         } else {
-            $participant             = new Participant();
-            $participant->name       = Input::get('name');
-            $participant->email      = Input::get('email');
-            $participant->adress     = Input::get('adress');
-            $participant->city       = Input::get('city');
-            $participant->word       = Input::get('word');
-            $participant->ip         = Request::ip();
-            $participant->save();
+            $player             = new Player();
+            $player->name       = Input::get('name');
+            $player->email      = Input::get('email');
+            $player->adress     = Input::get('adress');
+            $player->city       = Input::get('city');
+            $player->word       = Input::get('word');
+            $player->ip         = Request::ip();
+            $player->save();
 
 
             Session::flash('message', 'Dank u voor het meedoen');

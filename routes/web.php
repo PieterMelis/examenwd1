@@ -22,4 +22,26 @@ Route::get('/wedstrijd', 'HomeController@wedstrijd');
 Route::get('/win', 'HomeController@win');
 Route::get('/user_dashboard', 'HomeController@user_dashboard');
 
-Route::resource('ParticipansSend','ParticipansController');
+Route::resource('PlayerSend','ParticipansController');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
