@@ -23,8 +23,7 @@ class WordController extends Controller
     public function index()
     {
 
-        $participants = Participant::where('enabled',1)->get();
-        return view("participants")->with('participants',$participants);
+        Participant::All()->get();
 
     }
     public function create()

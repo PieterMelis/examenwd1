@@ -20,7 +20,6 @@ class CreateParticipansTable extends Migration
             $table->string('adress');
             $table->string('city');
             $table->string('word');
-            $table->string('question');
             $table->string('ip_adress');
             $table->boolean('enabled');
             $table->timestamps();

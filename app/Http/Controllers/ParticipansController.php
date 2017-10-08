@@ -1,8 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 
 class ParticipansController extends Controller
 {
@@ -29,7 +33,6 @@ class ParticipansController extends Controller
             'email'      => 'required|email|unique:participants',
             'adress'     => 'required' ,
             'city'       => 'required',
-            'question'   => 'required',
             'word'       => 'required'
         );
         $validator = Validator::make(Input::all(), $rules);
@@ -44,7 +47,6 @@ class ParticipansController extends Controller
             $participant->email      = Input::get('email');
             $participant->adress     = Input::get('adress');
             $participant->city       = Input::get('city');
-            $participant->question   = Input::get('question');
             $participant->word       = Input::get('word');
             $participant->ip         = Request::ip();
             $participant->save();

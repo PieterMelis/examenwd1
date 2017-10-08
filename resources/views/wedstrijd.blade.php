@@ -29,11 +29,6 @@
     </div>
 
     <div class="form-group">
-        {{ Form::label('question 1') }}
-        {{ Form::text('question', array('class' => 'form-control')) }}
-    </div>
-
-    <div class="form-group">
         {{ Form::label('word', 'Word') }}
         {{ Form::text('word', 'word'), array('class' => 'form-control') }}
     </div>

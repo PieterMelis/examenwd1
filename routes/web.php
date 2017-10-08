@@ -22,6 +22,4 @@ Route::get('/wedstrijd', 'HomeController@wedstrijd');
 Route::get('/win', 'HomeController@win');
 Route::get('/user_dashboard', 'HomeController@user_dashboard');
 
-Route::resource('word','ParticipansController');
-
-Route::get('ParticipansSend', 'ParticipansController@index')->name('words');
+Route::resource('ParticipansSend','ParticipansController');
