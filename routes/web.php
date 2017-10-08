@@ -23,7 +23,7 @@ Route::get('/win', 'HomeController@win');
 Route::get('/user_dashboard', 'HomeController@user_dashboard');
 
 Route::resource('PlayerSend','ParticipansController');
-
+Route::resource('ParticipansSend','ParticipansController');
 
 
 

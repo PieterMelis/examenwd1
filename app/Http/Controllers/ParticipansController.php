@@ -31,7 +31,7 @@ class ParticipansController extends Controller
     {
         $rules = array(
             'name'       => 'required',
-            'email'      => 'required|email|unique:participants',
+            'email'      => 'required|email|unique:Players',
             'adress'     => 'required' ,
             'city'       => 'required',
             'word'       => 'required'
@@ -40,7 +40,7 @@ class ParticipansController extends Controller
 
 
         if ($validator->fails()) {
-            return Redirect::to('word/create')
+            return Redirect::to('wedstrijd')
                 ->withErrors($validator);
         } else {
             $player             = new Player();
