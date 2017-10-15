@@ -3,11 +3,6 @@
 @section('content')
 <div class="container">
               <h1>Wedstrijd</h1>
-    @if (Session::has('message'))
-        <div class="alert alert-info">{{ Session::get('message') }}</div>
-
-
-    @endif
 
 
     {{ Html::ul($errors->all(),array('class' => 'errors')) }}
