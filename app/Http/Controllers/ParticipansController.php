@@ -18,8 +18,8 @@ class ParticipansController extends Controller
     public function index()
     {
 
-        $participants = Player::where('enabled',1)->get();
-        return view("Players")->with('Players',Players);
+        $player = Player::where('enabled',1)->get();
+        return view("wedstrijd")->with('Players',$players);
 
     }
     public function create()

@@ -5,34 +5,40 @@
               <h1>Wedstrijd</h1>
     @if (Session::has('message'))
         <div class="alert alert-info">{{ Session::get('message') }}</div>
+
+
     @endif
+
+
+    {{ Html::ul($errors->all(),array('class' => 'errors')) }}
+
     {{ Form::open(['url' => 'PlayerSend']) }}
 
 
 
     <div class="form-group">
         {{ Form::label('name', 'Name') }}
-        {{ Form::text('name', array('class' => 'form-control')) }}
+        {{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('email', 'Email') }}
-        {{ Form::email('email',  array('class' => 'form-control')) }}
+        {{ Form::email('email', Input::old('email'),  array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('adress', 'Adress') }}
-        {{ Form::text('adress', array('class' => 'form-control')) }}
+        {{ Form::text('adress', Input::old('adress'), array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('city', 'City') }}
-        {{ Form::text('city',  array('class' => 'form-control')) }}
+        {{ Form::text('city',  Input::old('city'), array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('word', 'Word') }}
-        {{ Form::text('word', 'word'), array('class' => 'form-control') }}
+        {{ Form::text('word',  Input::old('word'), array('class' => 'form-control') )}}
     </div>
 
     {{ Form::submit('Verzenden', array( 'class' => 'btn btn-primary')) }}
