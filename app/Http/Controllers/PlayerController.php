@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
-use App\Player;
+use App\Players;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
-class ParticipansController extends Controller
+class PlayerController extends Controller
 {
     public function __construct()
     {
@@ -17,21 +17,21 @@ class ParticipansController extends Controller
     }
     public function index()
     {
-
-        $player = Player::where('enabled',1)->get();
+        $player = Players::where('enabled',1)->get();
         return view("wedstrijd")->with('Players',$player);
 
     }
     public function create()
     {
-        return View::make('word.create');
+        return View::make('questions.create');
     }
 
-    public function store()
+    public function store(Request $req)
     {
+
         $rules = array(
             'name'       => 'required',
-            'email'      => 'required|email|unique:Players',
+            'email'      => 'required|email',
             'adress'     => 'required' ,
             'city'       => 'required',
             'word'       => 'required'
@@ -43,20 +43,23 @@ class ParticipansController extends Controller
             return Redirect::to('wedstrijd')
                 ->withErrors($validator);
         } else {
-            $player             = new Player();
-            $player->name       = Input::get('name');
-            $player->email      = Input::get('email');
-            $player->adress     = Input::get('adress');
-            $player->city       = Input::get('city');
-            $player->word       = Input::get('word');
-            $player->ip         = Request::ip();
+            $player = new Players();
+            $player->name = Input::get('name');
+            $player->email = Input::get('email');
+            $player->adress = Input::get('adress');
+            $player->city = Input::get('city');
+            $player->word = Input::get('word');
+            $player->enabled = true;
+            $player->ip_adress = $req->ip();
+        }
             $player->save();
 
 
+
             Session::flash('message', 'Dank u voor het meedoen');
-            return Redirect::to('word');
-        }
+            return Redirect::to('home');
     }
+
 
 
 

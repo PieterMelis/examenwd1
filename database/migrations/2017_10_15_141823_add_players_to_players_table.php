@@ -13,9 +13,9 @@ class AddPlayersToPlayersTable extends Migration
      */
     public function up()
     {
-        Schema::table('players', function (Blueprint $table) {
+/*        Schema::table('players', function (Blueprint $table) {
             //
-        });
+        });*/
     }
 
     /**
@@ -25,8 +25,8 @@ class AddPlayersToPlayersTable extends Migration
      */
     public function down()
     {
-        Schema::table('players', function (Blueprint $table) {
+        /*Schema::table('players', function (Blueprint $table) {
             //
-        });
+        });*/
     }
 }

@@ -25,7 +25,6 @@ class CreatePlayersTable extends Migration
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -33,8 +32,7 @@ class CreatePlayersTable extends Migration
      */
     public function down()
     {
-        Schema::create('players', function (Blueprint $table) {
-            Schema::dropIfExists('players');
-        });
+        Schema::dropIfExists('players');
     }
+
 }

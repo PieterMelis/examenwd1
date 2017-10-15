@@ -17,20 +17,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/wedstrijd', 'HomeController@wedstrijd');
-Route::get('/win', 'HomeController@win');
-Route::get('/user_dashboard', 'HomeController@user_dashboard');
+Route::get('/home', 'HomeController@index')
+    ->name('home');
 
-Route::resource('PlayerSend','ParticipansController');
-Route::resource('ParticipansSend','ParticipansController');
+Route::get('/wedstrijd', 'HomeController@wedstrijd')
+    ->name('wedstrijd');
+
+Route::get('/win', 'HomeController@win')
+    ->name('win');
+
+Route::get('/user_dashboard', 'HomeController@user_dashboard')
+    ->name('dashboard');
+
+Route::post('/PlayerSend', 'PlayerController@store');
 
 
-
-
-
-
-
+Route::get('/edit_question', 'HomeController@user_dashboard')
+    ->name('edit');
 
 
 

@@ -14,11 +14,10 @@
                         </div>
                     @endif
 
-                        <a href="{{ url('/edit_question') }}">Edit questions</a>
-                        <a href="{{ url('/user_dashboard') }}">User dashboard</a>
+                        <a href="{{ route('edit') }}">Edit questions</a>
+                        <a href="{{ route('dashboard') }}">User dashboard</a>
 
-
-                </div>
+              </div>
             </div>
         </div>
     </div>

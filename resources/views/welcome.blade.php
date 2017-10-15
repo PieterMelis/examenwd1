@@ -83,9 +83,9 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ url('/wedstrijd') }}">Wedstrijd</a>
-                    <a href="{{ url('/win') }}">Winnaars</a>
-                    <a href="http://www.volvo.com/home.html">Over Volvo</a>
+                    <a href="{{ route('wedstrijd') }}">Wedstrijd</a>
+                    <a href="{{ route('win') }}">Winnaars</a>
+                    <a target="_blank" href="http://www.volvo.com/home.html">Over Volvo</a>
                 </div>
             </div>
         </div>
