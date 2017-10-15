@@ -19,7 +19,7 @@ class ParticipansController extends Controller
     {
 
         $player = Player::where('enabled',1)->get();
-        return view("wedstrijd")->with('Players',$players);
+        return view("wedstrijd")->with('Players',$player);
 
     }
     public function create()
