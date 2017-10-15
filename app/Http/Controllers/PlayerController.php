@@ -31,7 +31,7 @@ class PlayerController extends Controller
 
         $rules = array(
             'name'       => 'required',
-            'email'      => 'required|email',
+            'email'      => 'required|email|unique:players',
             'adress'     => 'required' ,
             'city'       => 'required',
             'word'       => 'required'

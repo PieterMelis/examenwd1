@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'WelcomeController@index')
+    ->name('welcome');
 
 Auth::routes();
 
@@ -29,11 +29,14 @@ Route::get('/win', 'HomeController@win')
 Route::get('/user_dashboard', 'HomeController@user_dashboard')
     ->name('dashboard');
 
-Route::post('/PlayerSend', 'PlayerController@store');
+Route::post('/PlayerSend', 'PlayerController@store')
+    ->name('playersend');
 
 
 Route::get('/edit_question', 'HomeController@user_dashboard')
     ->name('edit');
+
+
 
 
 
