@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View;
 
 class PlayerController extends Controller
 {
@@ -19,6 +20,13 @@ class PlayerController extends Controller
     {
         $player = Players::where('enabled',1)->get();
         return view("wedstrijd")->with('Players',$player);
+
+    }
+    public function indexPlayer()
+    {
+        $player = Players::all();
+        return View::make("Players")
+            ->with('players', $player);
 
     }
     public function create()
@@ -59,7 +67,14 @@ class PlayerController extends Controller
             Session::flash('message', 'Dank u voor het meedoen');
             return Redirect::to('home');
     }
+    public function show($id)
+    {
 
+        $player = Players::find($id);
+
+        return View::make('Player')
+            ->with('players', $player);
+    }
 
 
 

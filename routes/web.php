@@ -26,6 +26,7 @@ Route::get('/wedstrijd', 'HomeController@wedstrijd')
 Route::get('/win', 'HomeController@win')
     ->name('win');
 
+
 Route::get('/user_dashboard', 'HomeController@user_dashboard')
     ->name('dashboard');
 
@@ -37,10 +38,11 @@ Route::get('/edit_question', 'HomeController@user_dashboard')
     ->name('edit');
 
 
+Route::get('/Players', 'HomeController@players')
+    ->name('players');
 
 
-
-
+Route::get('/playerview', 'PlayerController@indexPlayer');
 
 
 

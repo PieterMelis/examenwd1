@@ -14,10 +14,11 @@
                         </div>
                     @endif
 
-                        <a href="{{ route('edit') }}">Edit questions</a>
-                        <a href="{{ route('dashboard') }}">User dashboard</a>
 
-              </div>
+                        <a href="{{ route('players') }}">view players</a>
+
+
+                </div>
             </div>
         </div>
     </div>
