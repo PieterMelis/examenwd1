@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-
+                        <a href="{{ route('register') }}">Add admin</a>
                         <a href="{{ url('/playersView') }}">view players</a>
 
 

@@ -41,7 +41,7 @@
                 {{ Form::close() }}
 
                 <a class="btn btn-small btn-success" href="{{ URL::to('players/' . $value->id) }}">Show this player</a>
-                    <a class="btn btn-small btn-info" href="{{ URL::to('players/' . $value->id . '/edit') }}">Edit this player</a>
+                    <a class="btn btn-small btn-info" href="{{ URL::to('player/' . $value->id . '/edit') }}">Edit this player</a>
 
                 </td>
             </tr>

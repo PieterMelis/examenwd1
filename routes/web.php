@@ -45,7 +45,8 @@ Route::get('/players/{id}', 'PlayerController@show');
 Route::get('/deletePlayer/{id}', 'PlayerController@destroy');
 Route::post('/deletePlayer/{id}', 'PlayerController@destroy');
 
-
+Route::get('/player/{id}/edit', 'PlayerController@update');
+Route::post('/player/{id}/edit', 'PlayerController@update');
 
 
 

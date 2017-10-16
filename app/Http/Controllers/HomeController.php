@@ -28,6 +28,7 @@ class HomeController extends Controller
 
     public function wedstrijd()
     {
+
         return view('wedstrijd');
     }
     public function win()
