@@ -58,7 +58,7 @@ class PlayerController extends Controller
             $player->adress = Input::get('adress');
             $player->city = Input::get('city');
             $player->word = Input::get('word');
-            $player->enabled = true;
+            $player->enabled = 1;
             $player->ip_adress = $req->ip();
         }
             $player->save();
@@ -78,13 +78,11 @@ class PlayerController extends Controller
     }
     public function destroy($id)
     {
-        // delete
         $player = Players::find($id);
         $player->enabled       = 0;
         $player->save();
-        // redirect
         Session::flash('message', 'Deleted successfully  !');
-        return Redirect::to('showPlayer');
+        return Redirect::to('playersView');
     }
 
 

@@ -17,6 +17,7 @@
             <td>name</td>
             <td>email</td>
             <td>adress</td>
+
             <td>city</td>
             <td>word</td>
         </tr>
@@ -34,7 +35,7 @@
                 <td>
 
 
-                {{ Form::open(array('url' => 'players/' . $value->id, 'class' => 'pull-right')) }}
+                {{ Form::open(array('url' => 'deletePlayer/' . $value->id , 'class' => 'pull-right')) }}
                 {{ Form::hidden('_method', 'DELETE') }}
                 {{ Form::submit('Delete this player', array('class' => 'btn btn-warning')) }}
                 {{ Form::close() }}
