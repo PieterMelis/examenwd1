@@ -15,7 +15,7 @@
                     @endif
 
 
-                        <a href="{{ route('players') }}">view players</a>
+                        <a href="{{ url('/playersView') }}">view players</a>
 
 
                 </div>

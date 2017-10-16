@@ -19,7 +19,8 @@ class PlayerController extends Controller
     public function index()
     {
         $player = Players::where('enabled',1)->get();
-        return view("wedstrijd")->with('Players',$player);
+        return View::make("Players")
+            ->with('players',$player);
 
     }
     public function indexPlayer()
@@ -72,10 +73,19 @@ class PlayerController extends Controller
 
         $player = Players::find($id);
 
-        return View::make('Player')
-            ->with('players', $player);
+        return View::make('showPlayer')
+            ->with('player', $player);
     }
-
+    public function destroy($id)
+    {
+        // delete
+        $player = Players::find($id);
+        $player->enabled       = 0;
+        $player->save();
+        // redirect
+        Session::flash('message', 'Deleted successfully  !');
+        return Redirect::to('showPlayer');
+    }
 
 
 

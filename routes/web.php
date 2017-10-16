@@ -38,12 +38,9 @@ Route::get('/edit_question', 'HomeController@user_dashboard')
     ->name('edit');
 
 
-Route::get('/Players', 'HomeController@players')
-    ->name('players');
-
-
-Route::get('/playerview', 'PlayerController@indexPlayer');
-
+Route::get('/playersView', 'PlayerController@indexPlayer');
+Route::get('/players/{id}', 'PlayerController@show');
+Route::get('/players/{id}', 'PlayerController@destroy');
 
 
 

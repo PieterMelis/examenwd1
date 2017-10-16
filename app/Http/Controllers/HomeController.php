@@ -38,6 +38,10 @@ class HomeController extends Controller
     {
         return view('user_dashboard');
     }
+    public function playerView()
+    {
+        return view('playerView');
+    }
 
 
 
