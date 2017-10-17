@@ -105,6 +105,7 @@
         </div>
 
         <div class="bottom-content-section" data-magellan data-threshold="0">
+
         </div>
 
     </div>
