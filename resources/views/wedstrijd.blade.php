@@ -13,17 +13,13 @@
 
 <div class="container">
 
-    @if ($errors)
-        @foreach ($errors as $error)
-            <div class="alert alert-danger">
-                {{ $error }}<br>
-            </div>
-        @endforeach
+
+    @if (Session::has('message'))
+        <div class="alert alert-success">{{ Session::get('message') }}</div>
     @endif
 
 
-
-    {{ Html::ul($errors->all(),array('class' => 'errors')) }}
+    {{ Html::ul($errors->all(),array('class' => 'alert alert-danger')) }}
 
     {{ Form::open(['url' => 'PlayerSend']) }}
 

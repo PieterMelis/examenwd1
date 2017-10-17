@@ -35,16 +35,17 @@
                 <td>
 
 
-                {{ Form::open(array('url' => 'deleteplayer/' . $value->id , 'class' => 'pull-right')) }}
-                {{ Form::hidden('_method', 'DELETE') }}
-                {{ Form::submit('Delete this player', array('class' => 'btn btn-warning')) }}
-                {{ Form::close() }}
+                    {{ Form::open(array('url' => 'delete/' . $value->id, 'class' => 'pull-right')) }}
+                    {{ Form::hidden('_method', 'post') }}
+                    {{ Form::submit('disqualification', array('class' => 'btn btn-warning')) }}
+                    {{ Form::close() }}
 
                 <a class="btn btn-small btn-success" href="{{ URL::to('players/' . $value->id) }}">Show this player</a>
-                    <a class="btn btn-small btn-info" href="{{ URL::to('player/' . $value->id . '/edit') }}">Edit this player</a>
 
                 </td>
             </tr>
+
+
         @endforeach
         </tbody>
     </table>

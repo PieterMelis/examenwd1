@@ -38,8 +38,8 @@ Route::post('/PlayerSend', 'PlayerController@store')
 
 Route::get('/playersView', 'PlayerController@index');
 Route::get('/players/{id}', 'PlayerController@show');
-Route::get('/deleteplayer/{id}', 'PlayerController@destroy');
-Route::post('/deleteplayer/{id}', 'PlayerController@destroy');
+Route::get('/delete/{id}', 'PlayerController@destroy');
+Route::post('/delete/{id}', 'PlayerController@destroy');
 
 Route::get('/player/{id}/edit', 'PlayerController@update');
 Route::post('/player/{id}/edit', 'PlayerController@update');

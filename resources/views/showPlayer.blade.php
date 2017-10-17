@@ -23,11 +23,6 @@
 
             </p>
 
-            {{ Form::open(array('url' => 'players/' . $player->id, 'class' => 'pull-right')) }}
-            {{ Form::hidden('_method', 'DELETE') }}
-            {{ Form::submit('Delete this player', array('class' => 'btn btn-warning')) }}
-            {{ Form::close() }}
-
         </div>
 
 

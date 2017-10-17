@@ -56,7 +56,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-
+                                    <li><a href="{{ url('/home') }}">Admin</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -68,6 +68,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+
                                 </ul>
                             </li>
                         @endguest
