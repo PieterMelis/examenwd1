@@ -20,30 +20,26 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')
     ->name('home');
 
-Route::get('/wedstrijd', 'HomeController@wedstrijd')
+Route::get('/wedstrijd', 'WelcomeController@wedstrijd')
     ->name('wedstrijd');
 
-Route::get('/win', 'HomeController@win')
-    ->name('win');
 
 
-Route::get('/user_dashboard', 'HomeController@user_dashboard')
-    ->name('dashboard');
+
+
 
 Route::post('/PlayerSend', 'PlayerController@store')
     ->name('playersend');
 
 
-Route::get('/edit_question', 'HomeController@user_dashboard')
-    ->name('edit');
 
 
 
 
 Route::get('/playersView', 'PlayerController@index');
 Route::get('/players/{id}', 'PlayerController@show');
-Route::get('/deletePlayer/{id}', 'PlayerController@destroy');
-Route::post('/deletePlayer/{id}', 'PlayerController@destroy');
+Route::get('/deleteplayer/{id}', 'PlayerController@destroy');
+Route::post('/deleteplayer/{id}', 'PlayerController@destroy');
 
 Route::get('/player/{id}/edit', 'PlayerController@update');
 Route::post('/player/{id}/edit', 'PlayerController@update');

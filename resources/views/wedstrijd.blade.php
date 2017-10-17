@@ -1,8 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+    <div class="hero-section">
+        <div class="coverBlack">
+            <div class="hero-section-text">
+                <h1>In what country is Volvo headquartered?</h1>
+            </div>
+        </div>
+    </div>
+
 <div class="container">
-              <h1>Wedstrijd</h1>
+
+    @if ($errors)
+        @foreach ($errors as $error)
+            <div class="alert alert-danger">
+                {{ $error }}<br>
+            </div>
+        @endforeach
+    @endif
+
 
 
     {{ Html::ul($errors->all(),array('class' => 'errors')) }}
@@ -32,13 +50,13 @@
     </div>
 
     <div class="form-group">
-        {{ Form::label('word', 'Word') }}
+        {{ Form::label('word', 'Answer') }}
         {{ Form::text('word',  Input::old('word'), array('class' => 'form-control') )}}
     </div>
 
     {{ Form::submit('Verzenden', array( 'class' => 'btn btn-primary')) }}
 
-    {{ Form::close() }}
+    {{ Form::close() }}<br>
 
 </div>
 @endsection

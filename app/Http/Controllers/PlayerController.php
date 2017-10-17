@@ -66,7 +66,7 @@ class PlayerController extends Controller
 
 
             Session::flash('message', 'Dank u voor het meedoen');
-            return Redirect::to('home');
+            return Redirect::to('wedstrijd');
     }
     public function show($id)
     {
@@ -76,35 +76,7 @@ class PlayerController extends Controller
         return View::make('showPlayer')
             ->with('player', $player);
     }
-    public function update($id)
-    {
-        $rules = array(
-            'name' => 'required',
-            'email' => 'required|email|unique:players',
-            'adress' => 'required',
-            'city' => 'required',
-            'word' => 'required'
-        );
-        $validator = Validator::make(Input::all(), $rules);
 
-        if ($validator->fails()) {
-            return Redirect::to('player/' . $id . '/edit')
-                ->withErrors($validator);
-        } else {
-
-            $player = Nerd::find($id);
-            $player->name = Input::get('name');
-            $player->email = Input::get('email');
-            $player->adress = Input::get('adress');
-            $player->city = Input::get('city');
-            $player->word = Input::get('word');
-            $player->save();
-
-
-            Session::flash('message', 'Successfully updated player!');
-            return Redirect::to('editPlayer');
-        }
-    }
     public function destroy($id)
     {
         $player = Players::find($id);

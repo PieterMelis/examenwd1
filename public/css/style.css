@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+
+
+.hero-full-screen {
+    height: 100vh;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    background: url("https://images.pexels.com/photos/378273/pexels-photo-378273.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb") center center no-repeat;
+    background-size: cover;
+}
+
+.hero-full-screen .middle-content-section {
+    text-align: center;
+    color: #fefefe;
+}
+
+.hero-full-screen .top-content-section {
+    width: 100%;
+}
+
+.hero-full-screen .bottom-content-section {
+    padding: 1rem;
+}
+
+.hero-full-screen .bottom-content-section svg {
+    height: 3.75rem;
+    width: 3.75rem;
+    fill: #fefefe;
+}
+
+.hero-full-screen .top-bar {
+    background: transparent;
+}
+
+.hero-full-screen .top-bar .menu {
+    background: transparent;
+}
+
+.hero-full-screen .top-bar .menu-text {
+    color: #fefefe;
+}
+
+.hero-full-screen .top-bar .menu li {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.hero-full-screen .top-bar .menu a {
+    color: #fefefe;
+    font-weight: bold;
+}
+.button.hollow{
+     background-color: rgba(255,255,255,0.3);
+     padding: 2em;
+     color: white ;
+     border: white 1px solid;
+ }
+.button.hollow:hover{
+    background-color: rgba(255,255,255,0.9);
+    color: grey ;
+    border: white 1px solid;
+}
+.form-control {
+
+    border-radius: 0;
+}
+
+
+
+.hero-section {
+    background: url("https://static.pexels.com/photos/248064/pexels-photo-248064.jpeg") 50% no-repeat;
+    background-size: cover;
+    height: 60vh;
+    margin-bottom: 5em;
+    text-align: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.hero-section .hero-section-text {
+    color: #fefefe;
+    text-shadow: 1px 1px 2px #0a0a0a;
+    margin-top: 15em;
+    ;
+    padding: 2em;
+}
+.coverBlack{
+    background-color: rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    margin-bottom:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,6 +11,11 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/foundation.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
         <style>
             html, body {
                 background-color: #fff;
@@ -65,29 +70,59 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    <img src="{{ asset('img/logo.png') }}" alt="">
-                </div>
 
-                <div class="links">
-                    <a href="{{ route('wedstrijd') }}">Wedstrijd</a>
-                    <a href="{{ route('win') }}">Winnaars</a>
-                    <a target="_blank" href="http://www.volvo.com/home.html">Over Volvo</a>
+    <div class="hero-full-screen">
+
+        <div class="top-content-section">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <ul class="menu">
+
+                        @if (Route::has('login'))
+                            <div class="top-right links">
+                                @auth
+                                    <a href="{{ url('/home') }}">Admin</a>
+                                    @else
+                                        <a href="{{ route('login') }}">Login</a>
+                                        @endauth
+                            </div>
+                        @endif
+                    </ul>
                 </div>
             </div>
         </div>
+
+        <div class="middle-content-section">
+            <div class="title m-b-md">
+                <img src="{{ asset('img/logo.png') }}" alt="">
+                <h1>Play and win the new Volvo XC40</h1>
+            </div>
+            <div class="links">
+                <a href="{{ route('wedstrijd') }}" class="hollow button">Wedstrijd</a>
+                <a target="_blank" href="http://www.volvo.com/home.html" class="hollow button">Over Volvo</a>
+            </div>
+        </div>
+
+        <div class="bottom-content-section" data-magellan data-threshold="0">
+            <a href="#main-content-section"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"></svg></a>
+        </div>
+
+    </div>
+
+    <div id="main-content-section" data-magellan-target="main-content-section">
+
+    </div>
+
+
+
+
+
     </body>
+    <!-- Scripts -->
+    <script src="{{ asset('js/foundation/vendor/jquery.js') }}"></script>
+    <script src="{{ asset('js/foundation/vendor/what-input.js') }}"></script>
+    <script src="{{ asset('js/foundation/vendor/foundation.js') }}"></script>
+    <script src="{{ asset('js/foundation/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </html>

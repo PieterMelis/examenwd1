@@ -11,7 +11,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/foundation.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -29,7 +33,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                       <img src="{{ asset('img/logo.png') }}" style="height: 160%; margin-top: -0.4em;">
                     </a>
                 </div>
 
@@ -76,6 +80,10 @@
     </div>
 
     <!-- Scripts -->
+    <script src="{{ asset('js/foundation/vendor/jquery.js') }}"></script>
+    <script src="{{ asset('js/foundation/vendor/what-input.js') }}"></script>
+    <script src="{{ asset('js/foundation/vendor/foundation.js') }}"></script>
+    <script src="{{ asset('js/foundation/app.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
