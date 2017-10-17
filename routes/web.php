@@ -23,11 +23,6 @@ Route::get('/home', 'HomeController@index')
 Route::get('/wedstrijd', 'WelcomeController@wedstrijd')
     ->name('wedstrijd');
 
-
-
-
-
-
 Route::post('/PlayerSend', 'PlayerController@store')
     ->name('playersend');
 
@@ -40,14 +35,17 @@ Route::get('/playersView', 'PlayerController@index');
 Route::get('/players/{id}', 'PlayerController@show');
 Route::get('/delete/{id}', 'PlayerController@destroy');
 Route::post('/delete/{id}', 'PlayerController@destroy');
-
 Route::get('/player/{id}/edit', 'PlayerController@update');
 Route::post('/player/{id}/edit', 'PlayerController@update');
 
 
 
+Route::get('/allPeriods', 'PeriodsController@index');
 
+Route::get('/period/{id}/edit', 'PeriodsController@edit');
 
+Route::get('editPeriod/{id}', 'PeriodsController@update');
+Route::post('editPeriod/{id}', 'PeriodsController@update');
 
 
 

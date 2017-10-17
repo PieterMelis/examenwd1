@@ -25,7 +25,12 @@
                             </a>
                         </div>
 
-
+                        <div class="adminBlock">
+                            <a href="{{ url('/allPeriods') }}">
+                                <img src="{{ asset('img/player.png') }}">
+                                <h6>All periods</h6>
+                            </a>
+                        </div>
                 </div>
             </div>
         </div>

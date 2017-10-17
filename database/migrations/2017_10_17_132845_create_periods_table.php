@@ -18,6 +18,8 @@ class CreatePeriodsTable extends Migration
             $table->string("periodname");
             $table->date("startdate");
             $table->date("enddate");
+            $table->detatime("updated_at");
+
         });
     }
 
