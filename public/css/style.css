@@ -222,6 +222,16 @@
     top: 52px;
     transition: left 0.3s ease-out;
 }
+.form-horizontal .control-label {
+    text-align: left;
+}
+.btn {
+    border-radius: 0;
+    width: 100%;
+}
+
+
+
 
 @media screen and (max-width: 39.9375em) {
     .slide {
@@ -264,6 +274,7 @@
         color: #3ADB76;
         outline: none;
     }
+
 }
 
 

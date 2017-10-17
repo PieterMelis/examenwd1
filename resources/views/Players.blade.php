@@ -17,7 +17,8 @@
             <td>email</td>
             <td>adress</td>
             <td>city</td>
-            <td>word</td>
+            <td>Answer</td>
+            <td></td>
         </tr>
         </thead>
         <tbody>
@@ -32,7 +33,7 @@
                 <td>
 
 
-                    {{ Form::open(array('url' => 'delete/' . $value->id, 'class' => 'pull-right')) }}
+                    {{ Form::open(array('url' => 'delete/' . $value->id)) }}
                     {{ Form::hidden('_method', 'post') }}
                     {{ Form::submit('disqualification', array('class' => 'btn btn-warning')) }}
                     {{ Form::close() }}
