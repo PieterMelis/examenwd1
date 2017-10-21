@@ -21,8 +21,8 @@ Route::get('/home', 'HomeController@index')
 
 
 
-Route::post('/PlayerSend', 'PlayerController@store')
-    ->name('playersend');
+
+
 
 
 
@@ -35,7 +35,7 @@ Route::get('/delete/{id}', 'PlayerController@destroy');
 Route::post('/delete/{id}', 'PlayerController@destroy');
 Route::get('/player/{id}/edit', 'PlayerController@update');
 Route::post('/player/{id}/edit', 'PlayerController@update');
-
+Route::post('/PlayerSend', 'HomeController@store');
 /*---------------------Periods-------------------------*/
 
 Route::get('/allPeriods', 'PeriodsController@index');
