@@ -57,7 +57,7 @@ Route::post('editQuestion/{id}', 'questionController@update');
 Route::get('/wedstrijd', 'questionController@questionView');
 
 
-Route::get('/winner', 'questionController@viewWinner');
+Route::get('/winner', 'questionController@makeWinners');
 
 
 

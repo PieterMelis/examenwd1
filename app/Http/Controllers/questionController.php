@@ -69,19 +69,23 @@ class questionController extends Controller
     public function makeWinners()
     {
         $periods=Period::all();
-        $winners = Players::where('enabled',1)->where('word','sweden')->inRandomOrder()->first();
-
+        $player = Players::where('enabled',1)->where('word','sweden')
+            ->inRandomOrder()->first();
+        $today = Carbon::today();
         foreach ($periods as $key => $value)
         {
-            if($value->startdate <= Carbon::now() && Carbon::now() <= $value->enddate)
+            if($today->toDateString() == $value->enddate)
             {
                 $period=$value->periodname;
+
+
+                $winner = new Winner();
+                $winner->player = $player->name;
+                $winner->period = $period;
+                $winner->save();
             }
         }
-            $winner = new Winner();
-            $winner->player = $winners->name;
-            $winner->period = $period;
-            $winner->save();
+
     }
 
 }
