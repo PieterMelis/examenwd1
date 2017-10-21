@@ -12,8 +12,7 @@
 */
 
 
-Route::get('/', 'WelcomeController@index')
-    ->name('welcome');
+Route::get('/', 'questionController@viewWinner');
 
 Auth::routes();
 
@@ -58,7 +57,7 @@ Route::post('editQuestion/{id}', 'questionController@update');
 Route::get('/wedstrijd', 'questionController@questionView');
 
 
-Route::get('/winner', 'questionController@viewWinners');
+Route::get('/winner', 'questionController@viewWinner');
 
 
 

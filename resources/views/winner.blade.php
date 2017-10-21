@@ -21,14 +21,16 @@
         </tr>
         </thead>
         <tbody>
+        @foreach($winners as $key => $value)
             <tr>
-                <td>{{ $players->name }}</td>
-                <td>{{ $players->email }}</td>
-                <td>{{ $players->adress }}</td>
-                <td>{{ $players->city }}</td>
-                <td>{{ $players->word }}</td>
+                <td>{{ $value->name }}</td>
+
+
+
             </tr>
 
+
+        @endforeach
         </tbody>
     </table>
 </div>

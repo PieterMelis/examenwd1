@@ -111,7 +111,9 @@
     </div>
 
     <div id="main-content-section" data-magellan-target="main-content-section">
-
+        @foreach($winner as $key => $value)
+                <h1>{{$value->player }}</h1>
+        @endforeach
     </div>
 
 

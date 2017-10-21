@@ -5,6 +5,7 @@ use App\Question;
 use App\Players;
 use App\Winner;
 use App\Period;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Redirect;
@@ -33,6 +34,14 @@ class questionController extends Controller
             ->with('question', $question);
     }
 
+    public function viewWinner()
+    {
+        $winner = Winner::all();
+
+        return View::make("welcome")
+            ->with('winner', $winner);
+    }
+
     public function update(Request $request, $id)
     {
         $rules = array(
@@ -57,17 +66,23 @@ class questionController extends Controller
         }
     }
 
-    public function viewWinners()
+    public function makeWinners()
     {
+        $periods=Period::all();
         $winners = Players::where('enabled',1)->where('word','sweden')->inRandomOrder()->first();
 
+        foreach ($periods as $key => $value)
+        {
+            if($value->startdate <= Carbon::now() && Carbon::now() <= $value->enddate)
+            {
+                $period=$value->periodname;
+            }
+        }
             $winner = new Winner();
             $winner->player = $winners->name;
-            $winner->period = 2017;
+            $winner->period = $period;
             $winner->save();
-
-        return View::make("winner")
-            ->with('players',$winner);
     }
+
 }
 
