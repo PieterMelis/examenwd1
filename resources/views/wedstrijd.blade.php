@@ -6,7 +6,15 @@
     <div class="hero-section">
         <div class="coverBlack">
             <div class="hero-section-text">
-                <h1>In what country is Volvo headquartered?</h1>
+                @foreach($question as $key => $value)
+                    @if($value->id === 1)
+                        <h1>{{$value->question }}</h1>
+                    @else
+                        <div>No questions found</div>
+                    @endif
+                @endforeach
+
+
             </div>
         </div>
     </div>

@@ -14,9 +14,8 @@ class GamePlayerController extends Controller
      */
     public function index()
     {
-        $players = Players::all();
-        return view('home')->withPlayers($players);
-    }
+
+}
 
     /**
      * Show the form for creating a new resource.

@@ -35,10 +35,10 @@
 
                     {{ Form::open(array('url' => 'delete/' . $value->id)) }}
                     {{ Form::hidden('_method', 'post') }}
-                    {{ Form::submit('disqualification', array('class' => 'btn btn-warning')) }}
+                    {{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
                     {{ Form::close() }}
 
-                    <a class="btn btn-small btn-success" href="{{ URL::to('players/' . $value->id) }}">Show this player</a>
+                    <a class="btn btn-small btn-success" href="{{ URL::to('players/' . $value->id) }}">Detail</a>
 
                 </td>
             </tr>

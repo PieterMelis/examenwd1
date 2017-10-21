@@ -52,6 +52,14 @@ class PlayerController extends Controller
             return Redirect::to('wedstrijd')
                 ->withErrors($validator);
         } else {
+
+
+
+
+
+
+
+
             $player = new Players();
             $player->name = Input::get('name');
             $player->email = Input::get('email');

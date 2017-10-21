@@ -99,7 +99,7 @@
                 <h1>Play and win the new Volvo XC40</h1>
             </div>
             <div class="links">
-                <a href="{{ route('wedstrijd') }}" class="hollow button">Participate</a>
+                <a href="{{ url('/wedstrijd') }}" class="hollow button">Participate</a>
                 <a target="_blank" href="http://www.volvo.com/home.html" class="hollow button">About Volvo</a>
             </div>
         </div>

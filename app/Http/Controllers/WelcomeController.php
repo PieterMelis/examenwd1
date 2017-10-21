@@ -10,9 +10,5 @@ class WelcomeController extends Controller
 
         return view('welcome');
     }
-    public function wedstrijd()
-    {
 
-        return view('wedstrijd');
-    }
 }

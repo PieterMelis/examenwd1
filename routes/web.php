@@ -20,8 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')
     ->name('home');
 
-Route::get('/wedstrijd', 'WelcomeController@wedstrijd')
-    ->name('wedstrijd');
+
 
 Route::post('/PlayerSend', 'PlayerController@store')
     ->name('playersend');
@@ -29,7 +28,7 @@ Route::post('/PlayerSend', 'PlayerController@store')
 
 
 
-
+/*--------------------Players-------------------------*/
 
 Route::get('/playersView', 'PlayerController@index');
 Route::get('/players/{id}', 'PlayerController@show');
@@ -38,7 +37,7 @@ Route::post('/delete/{id}', 'PlayerController@destroy');
 Route::get('/player/{id}/edit', 'PlayerController@update');
 Route::post('/player/{id}/edit', 'PlayerController@update');
 
-
+/*---------------------Periods-------------------------*/
 
 Route::get('/allPeriods', 'PeriodsController@index');
 
@@ -46,6 +45,28 @@ Route::get('/period/{id}/edit', 'PeriodsController@edit');
 
 Route::get('editPeriod/{id}', 'PeriodsController@update');
 Route::post('editPeriod/{id}', 'PeriodsController@update');
+
+
+/*---------------------question-------------------------*/
+
+
+Route::get('/question', 'questionController@index');
+
+Route::get('editQuestion/{id}', 'questionController@update');
+Route::post('editQuestion/{id}', 'questionController@update');
+
+Route::get('/wedstrijd', 'questionController@questionView');
+
+
+Route::get('/winner', 'questionController@viewWinners');
+
+
+
+
+
+
+
+
 
 
 
