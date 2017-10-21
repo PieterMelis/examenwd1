@@ -105,15 +105,18 @@
         </div>
 
         <div class="bottom-content-section" data-magellan data-threshold="0">
-
+            @foreach($winner as $key => $value)
+                <h4>Winner {{$value->period }}  : {{$value->player }}</h4>
+            @endforeach
         </div>
 
     </div>
 
     <div id="main-content-section" data-magellan-target="main-content-section">
-        @foreach($winner as $key => $value)
-                <h1>Winner {{$value->period }}  : {{$value->player }}</h1>
-        @endforeach
+
+
+
+
     </div>
 
 

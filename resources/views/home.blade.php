@@ -37,12 +37,7 @@
                                 <h6>add question</h6>
                             </a>
                         </div>
-                        <div class="adminBlock">
-                            <a href="{{ url('/winner') }}">
-                                <img src="{{ asset('img/player.png') }}">
-                                <h6>Winner</h6>
-                            </a>
-                        </div>
+
                 </div>
             </div>
         </div>

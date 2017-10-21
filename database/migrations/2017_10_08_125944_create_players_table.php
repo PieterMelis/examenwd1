@@ -21,6 +21,7 @@ class CreatePlayersTable extends Migration
             $table->string('city');
             $table->string('word');
             $table->string('ip_adress');
+            $table->string('period');
             $table->boolean('enabled');
             $table->timestamps();
         });

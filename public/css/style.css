@@ -47,10 +47,8 @@
     padding: 1rem;
 }
 
-.hero-full-screen .bottom-content-section svg {
-    height: 3.75rem;
-    width: 3.75rem;
-    fill: #fefefe;
+.hero-full-screen .bottom-content-section {
+    color: white;
 }
 
 .hero-full-screen .top-bar {
@@ -276,6 +274,7 @@
     }
 
 }
+
 
 
 

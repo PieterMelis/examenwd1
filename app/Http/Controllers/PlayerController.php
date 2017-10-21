@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-
+use App\Period;
 use App\Players;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
@@ -37,7 +38,7 @@ class PlayerController extends Controller
 
     public function store(Request $req)
     {
-
+        $periods=Period::all();
         $rules = array(
             'name'       => 'required',
             'email'      => 'required|email|unique:players',
@@ -49,32 +50,37 @@ class PlayerController extends Controller
 
 
         if ($validator->fails()) {
-            return Redirect::to('wedstrijd')
+            return Redirect::back()
                 ->withErrors($validator);
         } else {
 
 
+       foreach ($periods as $key => $value) {
 
-
+                if ($value->startdate <= Carbon::now() && Carbon::now() <= $value->enddate) {
+                    $period = $value->periodname;
+                }
+       }
 
 
 
 
             $player = new Players();
-            $player->name = Input::get('name');
-            $player->email = Input::get('email');
-            $player->adress = Input::get('adress');
-            $player->city = Input::get('city');
-            $player->word = Input::get('word');
-            $player->enabled = 1;
-            $player->ip_adress = $req->ip();
+            $player->name       = Input::get('name');
+            $player->email      = Input::get('email');
+            $player->adress     = Input::get('adress');
+            $player->city       = Input::get('city');
+            $player->word       = Input::get('word');
+            $player->enabled    = 1;
+            $player->period     =$period;
+            $player->ip_adress  = $req->ip();
         }
             $player->save();
 
 
 
             Session::flash('message', 'Dank u voor het meedoen');
-            return Redirect::to('wedstrijd');
+            return Redirect::back();;
     }
     public function show($id)
     {
