@@ -14,6 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+
+        'App\Console\Commands\winnerR'
     ];
 
     /**
@@ -26,6 +28,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->command('pickRandom:winnerR')
+            ->dailyAt('22:00');
     }
 
     /**

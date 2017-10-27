@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Question;
 use App\Players;
-use App\Winner;
+use App\Winners;
 use App\Period;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -36,7 +36,7 @@ class questionController extends Controller
 
     public function viewWinner()
     {
-        $winner = Winner::all();
+        $winner = Winners::all();
 
         return View::make("welcome")
             ->with('winner', $winner);
@@ -68,24 +68,22 @@ class questionController extends Controller
 
     public function makeWinners()
     {
+
         $periods=Period::all();
-        $player = Players::where('enabled',1)->where('word','sweden')
-            ->inRandomOrder()->first();
         $today = Carbon::today();
         foreach ($periods as $key => $value)
         {
-            if($today->toDateString() == $value->enddate)
-            {
-                $period=$value->periodname;
+            if($today->toDateString() == $value->enddate) {
+                $period = $value->periodname;
+                $player = Players::where('enabled',1)->where('word', 'Sweden')->where('period',$period)
+                    ->inRandomOrder()->first();
 
-
-                $winner = new Winner();
+                $winner = new Winners();
                 $winner->player = $player->name;
                 $winner->period = $period;
                 $winner->save();
             }
         }
-
     }
 
 }
