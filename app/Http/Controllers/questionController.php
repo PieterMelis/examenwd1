@@ -75,13 +75,22 @@ class questionController extends Controller
         {
             if($today->toDateString() == $value->enddate) {
                 $period = $value->periodname;
-                $player = Players::where('enabled',1)->where('word', 'Sweden')->where('period',$period)
-                    ->inRandomOrder()->first();
 
-                $winner = new Winners();
-                $winner->player = $player->name;
-                $winner->period = $period;
-                $winner->save();
+                $endWinner = Players::where('enabled',1)->where('word', 'Sweden')->where('period', $period);
+
+                        $nowWinner = $endWinner->orderByRaw("RAND()")
+                            ->take(1)
+                            ->get()
+                            ->first();
+
+
+                        $winner = new Winners();
+                        $winner['player'] = $nowWinner['name'];
+                        $winner->period = $period;
+                        $winner->save();
+
+
+
             }
         }
     }
