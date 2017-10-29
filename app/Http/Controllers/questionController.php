@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
+
 
 class questionController extends Controller
 {
@@ -68,28 +70,37 @@ class questionController extends Controller
 
     public function makeWinners()
     {
-
+        $answer=Question::where('id',1)->get();
         $periods=Period::all();
         $today = Carbon::today();
         foreach ($periods as $key => $value)
         {
             if($today->toDateString() == $value->enddate) {
-                $period = $value->periodname;
-
-                $endWinner = Players::where('enabled',1)->where('word', 'Sweden')->where('period', $period);
-
-                        $nowWinner = $endWinner->orderByRaw("RAND()")
-                            ->take(1)
-                            ->get()
-                            ->first();
-
-
-                        $winner = new Winners();
-                        $winner['player'] = $nowWinner['name'];
-                        $winner->period = $period;
-                        $winner->save();
+                foreach ($answer as $key => $answers){
+                    $period = $value->periodname;
+                    $OneAnswer = $answers->answer;
+                    $endWinner = Players::where('enabled',1)
+                        ->where('word', $OneAnswer)
+                        ->where('period', $period)
+                        ->orderByRaw("RAND()")
+                        ->take(1)
+                        ->get()
+                        ->first();
 
 
+                    $winner = new Winners();
+                    $winner['player'] = $endWinner['name'];
+                    $winner->period = $period;
+                    $winner->save();
+
+
+                    Mail::raw('Text to e-mail', function($message)
+                    {
+                        $message->from('melis.pieter@student.kdg.com', 'Laravel');
+
+                        $message->to('pieter.melis@hotmail.com')->cc('bar@example.com');
+                    });
+                }
 
             }
         }

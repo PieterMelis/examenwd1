@@ -61,8 +61,6 @@ class winnerR extends Command
                 $winner->period = $period;
                 $winner->save();
 
-
-
             }
         }
     }

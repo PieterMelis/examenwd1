@@ -58,7 +58,7 @@ Route::get('/wedstrijd', 'questionController@questionView');
 
 
 Route::get('/winner', 'questionController@makeWinners');
-
+Route::post('/winner', 'questionController@makeWinners');
 
 
 
