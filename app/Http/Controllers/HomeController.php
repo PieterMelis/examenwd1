@@ -38,6 +38,7 @@ class HomeController extends Controller
     }
     public function store(Request $req)
     {
+        $time= date('Y-m-d');
         $periods=Period::all();
         $rules = array(
             'name'       => 'required',
@@ -56,15 +57,10 @@ class HomeController extends Controller
 
 
             foreach ($periods as $key => $value) {
-
-                if ($value->startdate <= Carbon::now() && Carbon::now() <= $value->enddate) {
+                if ($value->startdate <= $time && $time <= $value->enddate) {
                     $period = $value->periodname;
                 }
             }
-
-
-
-
             $player = new Players();
             $player->name       = Input::get('name');
             $player->email      = Input::get('email');
@@ -72,13 +68,10 @@ class HomeController extends Controller
             $player->city       = Input::get('city');
             $player->word       = Input::get('word');
             $player->enabled    = 1;
-            $player->period     =$period;
+            $player->period     = $period;
             $player->ip_adress  = $req->ip();
+            $player->save();
         }
-        $player->save();
-
-
-
         Session::flash('message', 'Dank u voor het meedoen');
         return Redirect::back();;
     }

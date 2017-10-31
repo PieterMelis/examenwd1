@@ -13,27 +13,27 @@
                         </div>
                     @endif
                         <div class="adminBlock">
-                            <a href="{{ route('register') }}">
-                                <img src="{{ asset('img/admin.png') }}">
+                            <a href="{{ route('register') }}" class="button expand">
+                                <i class="material-icons">&#xE7FE;</i>
                                 <h6>Add admin</h6>
                             </a>
                         </div>
                         <div class="adminBlock">
-                            <a href="{{ url('/playersView') }}">
-                                <img src="{{ asset('img/player.png') }}">
+                            <a href="{{ url('/playersView') }}" class="button expand">
+                                <i class="material-icons">&#xE7FB;</i>
                                 <h6>view players</h6>
                             </a>
                         </div>
 
                         <div class="adminBlock">
-                            <a href="{{ url('/allPeriods') }}">
-                                <img src="{{ asset('img/player.png') }}">
+                            <a href="{{ url('/allPeriods') }}"class="button expand">
+                                <i class="material-icons">&#xE192;</i>
                                 <h6>All periods</h6>
                             </a>
                         </div>
                         <div class="adminBlock">
-                            <a href="{{ url('/question') }}">
-                                <img src="{{ asset('img/player.png') }}">
+                            <a href="{{ url('/question') }}"class="button expand">
+                                <i class="material-icons">&#xE8AF;</i>
                                 <h6>add question</h6>
                             </a>
                         </div>

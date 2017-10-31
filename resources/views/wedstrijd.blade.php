@@ -13,8 +13,7 @@
                         <div>No questions found</div>
                     @endif
                 @endforeach
-
-
+                    You can participate until {{$dTime}}
             </div>
         </div>
     </div>

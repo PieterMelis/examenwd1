@@ -22,6 +22,10 @@ class questionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $question = Question::all();
@@ -31,9 +35,20 @@ class questionController extends Controller
 
     public function questionView()
     {
+        $periods=Period::all();
+        $dTime= date('d-m-Y');
+        $time= date('Y-m-d');
         $question = Question::all();
-        return View::make("wedstrijd")
-            ->with('question', $question);
+        foreach ($periods as $key => $value) {
+
+        if ($value->startdate <= $time && $time <= $value->enddate) {
+            return View::make("wedstrijd")
+                ->with('question', $question)
+                ->with('dTime', $dTime);
+        }else {
+            return view('noGame');
+        }
+        }
     }
 
     public function viewWinner()
@@ -72,39 +87,37 @@ class questionController extends Controller
     {
         $answer=Question::where('id',1)->get();
         $periods=Period::all();
-        $today = Carbon::today();
+        $today = date('Y-m-d');
         foreach ($periods as $key => $value)
         {
-            if($today->toDateString() == $value->enddate) {
+            if($today == $value->enddate) {
                 foreach ($answer as $key => $answers){
                     $period = $value->periodname;
                     $OneAnswer = $answers->answer;
                     $endWinner = Players::where('enabled',1)
-                        ->where('word', $OneAnswer)
                         ->where('period', $period)
+                        ->where('word', $OneAnswer)
                         ->orderByRaw("RAND()")
-                        ->take(1)
-                        ->get()
                         ->first();
 
 
-                    $winner = new Winners();
-                    $winner['player'] = $endWinner['name'];
-                    $winner->period = $period;
-                    $winner->save();
+                        $winner = new Winners();
+                        $winner['player'] = $endWinner['name'];
+                        $winner['period'] = $period;
+                        $winner->save();
+                    }
+                Mail::raw('Sending emails with Mailgun and Laravel is easy!', function($message)
+                {
+                    $message->to('johndoe@gmail.com');
+                });
 
 
-                    Mail::raw('Text to e-mail', function($message)
-                    {
-                        $message->from('melis.pieter@student.kdg.com', 'Laravel');
 
-                        $message->to('pieter.melis@hotmail.com')->cc('bar@example.com');
-                    });
                 }
 
             }
         }
-    }
+
 
 }
 

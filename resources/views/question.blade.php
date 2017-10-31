@@ -28,7 +28,7 @@
 
 
 
-                    {{ Form::submit('Edit question', array('class' => 'btn btn-primary')) }}
+                    {{ Form::submit('Edit question', array('class' => 'button')) }}
 
                     {{ Form::close() }}
                 @else
