@@ -8,6 +8,8 @@
 
 
     <div class="container">
+        <a href="{{ URL::previous() }}" class="button tiny ">
+            <i class="material-icons">&#xE314;</i></a>
     <div class="row">
 
         <h1 class="text-center">Add new admin</h1>

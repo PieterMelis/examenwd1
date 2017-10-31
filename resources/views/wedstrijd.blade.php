@@ -19,7 +19,8 @@
     </div>
 
 <div class="container">
-
+    <a href="{{ URL::previous() }}" class="button tiny ">
+        <i class="material-icons">&#xE314;</i></a>
 
     @if (Session::has('message'))
         <div class="alert alert-success">{{ Session::get('message') }}</div>
@@ -57,7 +58,7 @@
         {{ Form::text('word',  Input::old('word'), array('class' => 'form-control') )}}
     </div>
 
-    {{ Form::submit('Verzenden', array( 'class' => 'btn btn-primary')) }}
+    {{ Form::submit('Verzenden', array( 'class' => 'button')) }}
 
     {{ Form::close() }}<br>
 

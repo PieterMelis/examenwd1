@@ -3,7 +3,8 @@
 @section('content')
 
 <div class="container">
-
+    <a href="{{ URL::previous() }}" class="button tiny ">
+        <i class="material-icons">&#xE314;</i></a>
     @if (Session::has('message'))
         <div class="alert alert-info">{{ Session::get('message') }}</div>
     @endif
@@ -30,7 +31,7 @@
     </div>
 
 
-    {{ Form::submit('Edit the date', array('class' => 'btn btn-primary')) }}
+    {{ Form::submit('Edit the date', array('class' => 'button')) }}
 
     {{ Form::close() }}
 </div>

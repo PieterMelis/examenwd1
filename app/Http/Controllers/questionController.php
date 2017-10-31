@@ -5,7 +5,6 @@ use App\Question;
 use App\Players;
 use App\Winners;
 use App\Period;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Redirect;
@@ -33,23 +32,6 @@ class questionController extends Controller
             ->with('question', $question);
     }
 
-    public function questionView()
-    {
-        $periods=Period::all();
-        $dTime= date('d-m-Y');
-        $time= date('Y-m-d');
-        $question = Question::all();
-        foreach ($periods as $key => $value) {
-
-        if ($value->startdate <= $time && $time <= $value->enddate) {
-            return View::make("wedstrijd")
-                ->with('question', $question)
-                ->with('dTime', $dTime);
-        }else {
-            return view('noGame');
-        }
-        }
-    }
 
     public function viewWinner()
     {

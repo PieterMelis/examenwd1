@@ -4,6 +4,8 @@
 
 
 <div class="container">
+    <a href="{{ URL::previous() }}" class="button tiny ">
+        <i class="material-icons">&#xE314;</i></a>
     <h1>View players</h1>
 
     @if (Session::has('message'))
