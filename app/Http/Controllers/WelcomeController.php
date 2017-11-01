@@ -33,7 +33,7 @@ class WelcomeController extends Controller
                 return View::make("wedstrijd")
                     ->with('question', $question)
                     ->with('dTime', $dTime);
-            }else {
+            }elseif (!!$value->startdate <= $time && $time <= $value->enddate) {
                 return view('noGame');
             }
         }

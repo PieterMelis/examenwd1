@@ -86,6 +86,8 @@ class questionController extends Controller
 
                         Mail::raw("The winner of ". $period ." is ". $endWinner['name'], function($message)
                         {
+                            $message->subject('Winner of the period' );
+
                             $message->from('volvo@pietermelis.com', 'Laravel');
 
                             $message->to('pietermelis123@gmail.com');
