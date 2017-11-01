@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', 'questionController@viewWinner');
+Route::get('/', 'WelcomeController@viewWinner');
 
 Auth::routes();
 

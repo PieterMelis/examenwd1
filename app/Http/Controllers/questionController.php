@@ -33,13 +33,7 @@ class questionController extends Controller
     }
 
 
-    public function viewWinner()
-    {
-        $winner = Winners::all();
 
-        return View::make("welcome")
-            ->with('winner', $winner);
-    }
 
     public function update(Request $request, $id)
     {
@@ -87,13 +81,17 @@ class questionController extends Controller
                         $winner['player'] = $endWinner['name'];
                         $winner['period'] = $period;
                         $winner->save();
-                    }
-                Mail::raw('Sending emails with Mailgun and Laravel is easy!', function($message)
-                {
-                    $message->to('johndoe@gmail.com');
-                });
 
 
+
+                        Mail::raw("The winner of ". $period ." is ". $endWinner['name'], function($message)
+                        {
+                            $message->from('volvo@pietermelis.com', 'Laravel');
+
+                            $message->to('pietermelis123@gmail.com');
+                        });
+
+                }
 
                 }
 

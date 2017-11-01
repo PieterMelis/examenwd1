@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Question;
 
+use App\Winners;
 use Illuminate\Support\Facades\View;
 use App\Period;
 
@@ -11,6 +12,13 @@ class WelcomeController extends Controller
     public function index(){
 
         return view('welcome');
+    }
+    public function viewWinner()
+    {
+        $winner = Winners::all();
+
+        return View::make("welcome")
+            ->with('winner', $winner);
     }
     public function questionView()
     {
@@ -21,6 +29,7 @@ class WelcomeController extends Controller
         foreach ($periods as $key => $value) {
 
             if ($value->startdate <= $time && $time <= $value->enddate) {
+
                 return View::make("wedstrijd")
                     ->with('question', $question)
                     ->with('dTime', $dTime);
