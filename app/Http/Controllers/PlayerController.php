@@ -62,6 +62,15 @@ class PlayerController extends Controller
         }
         return Redirect::to('playersView');
     }
+    public function DownloadExcel() {
+        Excel::create('players', function($excel)
+        {
+            $excel->sheet('players', function($playersExcel) {
+                $playersExcel->fromArray(Players::all(), null, 'A4', false, false);
+            });
+        })
+            ->download('xls');
+    }
 
 
 

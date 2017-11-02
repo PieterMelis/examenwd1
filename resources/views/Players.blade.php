@@ -12,6 +12,11 @@
         <div class="alert alert-info">{{ Session::get('message') }}</div>
     @endif
 
+    {!! Form::open(array('url' => array('downloadExel'), 'method' => 'post')) !!}
+    {{ Form::submit('Download Excel', array('class' => 'button pull-right')) }}
+    {!! Form::close() !!}
+
+
 
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#home">Period 1</a></li>

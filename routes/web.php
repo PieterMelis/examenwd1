@@ -58,7 +58,8 @@ Route::post('/winner', 'questionController@makeWinners');
 
 
 
-
+Route::post('downloadExel', 'PlayerController@DownloadExcel')
+;
 
 
 
