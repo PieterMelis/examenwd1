@@ -23,13 +23,13 @@ class WelcomeController extends Controller
     public function questionView()
     {
         $periods=Period::all();
-        $dTime= date('d-m-Y');
         $time= date('Y-m-d');
         $question = Question::all();
         foreach ($periods as $key => $value) {
 
             if ($value->startdate <= $time && $time <= $value->enddate) {
 
+                $dTime=  $value->enddate;
                 return View::make("wedstrijd")
                     ->with('question', $question)
                     ->with('dTime', $dTime);

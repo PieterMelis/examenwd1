@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Period;
-
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;

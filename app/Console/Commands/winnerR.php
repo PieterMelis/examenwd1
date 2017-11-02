@@ -41,25 +41,27 @@ class winnerR extends Command
      */
     public function handle()
     {
+        $answer=Question::where('id',1)->get();
         $periods=Period::all();
-        $today = Carbon::today();
+        $today = date('Y-m-d');
         foreach ($periods as $key => $value)
         {
-            if($today->toDateString() == $value->enddate) {
-                $period = $value->periodname;
+            if($today == $value->enddate) {
+                foreach ($answer as $key => $answers) {
+                    $period = $value->periodname;
+                    $OneAnswer = $answers->answer;
+                    $endWinner = Players::where('enabled', 1)
+                        ->where('period', $period)
+                        ->where('word', $OneAnswer)
+                        ->orderByRaw("RAND()")
+                        ->first();
 
-                $endWinner = Players::where('enabled',1)->where('word', 'Sweden')->where('period', $period);
 
-                $nowWinner = $endWinner->orderByRaw("RAND()")
-                    ->take(1)
-                    ->get()
-                    ->first();
-
-
-                $winner = new Winners();
-                $winner['player'] = $nowWinner['name'];
-                $winner->period = $period;
-                $winner->save();
+                    $winner = new Winners();
+                    $winner['player'] = $endWinner['name'];
+                    $winner['period'] = $period;
+                    $winner->save();
+                }
 
             }
         }
