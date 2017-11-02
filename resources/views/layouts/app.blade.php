@@ -88,5 +88,15 @@
     <script src="{{ asset('js/foundation/vendor/foundation.js') }}"></script>
     <script src="{{ asset('js/foundation/app.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $('a[data-toggle="tab"]').on( 'shown.bs.tab', function (e) {
+            // var target = $(e.target).attr("href"); // activated tab
+            // alert (target);
+            $($.fn.dataTable.tables( true ) ).css('width', '100%');
+            $($.fn.dataTable.tables( true ) ).DataTable().columns.adjust().draw();
+        } );
+    });
+</script>
 </body>
 </html>

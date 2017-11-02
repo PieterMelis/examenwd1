@@ -7,9 +7,7 @@
 <div class="container">
     <a href="{{ URL::previous() }}" class="button tiny ">
         <i class="material-icons">&#xE314;</i></a>
-
     <br>
-
                 <table class="table-expand">
                     <thead>
                     <tr class="table-expand-row">
@@ -30,15 +28,5 @@
                     </tbody>
                     @endforeach
                 </table>
-
-
-
-
-
-
 </div>
-
-
-
-
 @endsection

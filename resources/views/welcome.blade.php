@@ -64,9 +64,15 @@
             </div>
         </div>
 
-        <div class="bottom-content-section" data-magellan data-threshold="0">
+        <div class="bottom-content-section text-center" data-magellan data-threshold="0">
+            @if(!$winner->isEmpty())
+                <h3>Previous winners</h3>
+                <hr>
+            @endif
             @foreach($winner as $key => $value)
-                <h4>Winner {{$value->period }}  : {{$value->player }}</h4>
+
+                <h5>Winner {{$value->period }}  : {{$value->player }}</h5>
+
             @endforeach
         </div>
 

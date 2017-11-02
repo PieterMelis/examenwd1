@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Console\Command;
 use Carbon\Carbon;
 use App\Period;
@@ -61,6 +62,15 @@ class winnerR extends Command
                     $winner['player'] = $endWinner['name'];
                     $winner['period'] = $period;
                     $winner->save();
+
+                    /*Mail::raw("The winner of ". $period ." is ". $endWinner['name'], function($message)
+                    {
+                        $message->subject('Winner of the period' );
+
+                        $message->from('volvo@pietermelis.com', 'Laravel');
+
+                        $message->to('pietermelis123@gmail.com');
+                    });*/
                 }
 
             }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Players;
+use App\Winners;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
@@ -15,9 +16,17 @@ class PlayerController extends Controller
     }
     public function index()
     {
-        $player = Players::where('enabled',1)->get();
+        $winners = Winners::all();
+        $player1 = Players::where('enabled',1)->where('period','Period1')->get();
+        $player2 = Players::where('enabled',1)->where('period','Period2')->get();
+        $player3 = Players::where('enabled',1)->where('period','Period3')->get();
+        $player4 = Players::where('enabled',1)->where('period','Period4')->get();
         return View::make("Players")
-            ->with('players',$player);
+            ->with('winners',$winners)
+            ->with('players1',$player1)
+            ->with('players2',$player2)
+            ->with('players3',$player3)
+            ->with('players4',$player4);
 
     }
     public function indexPlayer()
