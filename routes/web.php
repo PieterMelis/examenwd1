@@ -23,10 +23,6 @@ Route::get('/home', 'HomeController@index')
 
 
 
-
-
-
-
 /*--------------------Players-------------------------*/
 
 Route::get('/playersView', 'PlayerController@index');
@@ -38,12 +34,12 @@ Route::post('/player/{id}/edit', 'PlayerController@update');
 Route::post('/PlayerSend', 'HomeController@store');
 /*---------------------Periods-------------------------*/
 
-Route::get('/allPeriods', 'PeriodsController@index');
+Route::get('/allPeriods', 'periodsController@index');
 
-Route::get('/period/{id}/edit', 'PeriodsController@edit');
+Route::get('/period/{id}/edit', 'periodsController@edit');
 
-Route::get('editPeriod/{id}', 'PeriodsController@update');
-Route::post('editPeriod/{id}', 'PeriodsController@update');
+Route::get('editPeriod/{id}', 'periodsController@update');
+Route::post('editPeriod/{id}', 'periodsController@update');
 
 
 /*---------------------question-------------------------*/

@@ -63,14 +63,14 @@ class winnerR extends Command
                     $winner['period'] = $period;
                     $winner->save();
 
-                    /*Mail::raw("The winner of ". $period ." is ". $endWinner['name'], function($message)
+                    Mail::raw("The winner of ". $period ." is ". $endWinner['name'], function($message)
                     {
                         $message->subject('Winner of the period' );
 
                         $message->from('volvo@pietermelis.com', 'Laravel');
 
                         $message->to('pietermelis123@gmail.com');
-                    });*/
+                    });
                 }
 
             }

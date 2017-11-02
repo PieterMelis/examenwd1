@@ -7,6 +7,7 @@ use App\Winners;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PlayerController extends Controller
 {
@@ -51,12 +52,14 @@ class PlayerController extends Controller
             ->with('player', $player);
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        $player = Players::find($id);
-        $player->enabled       = 0;
-        $player->save();
-        Session::flash('message', 'Deleted successfully  !');
+        if($request->isMethod("POST")){
+            $player = Players::find($id);
+            $player->enabled       = 0;
+            $player->save();
+            Session::flash('message', 'Deleted successfully  !');
+        }
         return Redirect::to('playersView');
     }
 

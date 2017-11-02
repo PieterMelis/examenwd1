@@ -41,11 +41,11 @@ class HomeController extends Controller
         $time= date('Y-m-d');
         $periods=Period::all();
         $rules = array(
-            'name'       => 'required',
-            'email'      => 'required|email|unique:players',
-            'adress'     => 'required' ,
-            'city'       => 'required',
-            'word'       => 'required'
+            'name'       => 'required|max:50',
+            'email'      => 'required|email|unique:players|max:50',
+            'adress'     => 'required|max:50' ,
+            'city'       => 'required|max:50',
+            'word'       => 'required|max:50'
         );
         $validator = Validator::make(Input::all(), $rules);
 

@@ -38,8 +38,8 @@ class questionController extends Controller
     public function update(Request $request, $id)
     {
         $rules = array(
-            'question'      => 'required',
-            'answer'      => 'required',
+            'question'      => 'required|max:50',
+            'answer'      => 'required|max:50',
         );
         $validator = Validator::make(Input::all(), $rules);
 
