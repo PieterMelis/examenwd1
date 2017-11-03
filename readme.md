@@ -16,7 +16,7 @@
 - Run `` "crontab -e" `` on command line and add : ``* * * * * php /path/to/artisan schedule:run 1>> /dev/null 2>&amp;1 ``
 - Save the file
 
-###Done !
+### Done !
 
 
 
