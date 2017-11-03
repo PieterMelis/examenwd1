@@ -21,7 +21,7 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($winners as $key => $value)
+        @foreach($endWinner as $key => $value)
             <tr>
                 <td>{{ $value->name }}</td>
 

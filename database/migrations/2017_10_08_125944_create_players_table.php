@@ -22,6 +22,7 @@ class CreatePlayersTable extends Migration
             $table->string('word');
             $table->string('ip_adress');
             $table->string('period');
+            $table->bigInteger('count');
             $table->boolean('enabled');
             $table->timestamps();
         });

@@ -9,13 +9,14 @@
 
 
 
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-left">
         <h2>{{ $player->name }}</h2>
         <p>
             <strong>Email:</strong> {{ $player->email }}<br>
             <strong>Adress:</strong> {{ $player->adress }}<br>
             <strong>City:</strong> {{ $player->city }}<br>
             <strong>Answer:</strong> {{ $player->word }}<br>
+            <strong>Extra answer:</strong>{{$player->count}}<br>
             <strong>period:</strong>{{$player->period}}<br>
             <strong>Play date:</strong> {{ $player->created_at }}<br>
             <strong>IP Adress:</strong> {{ $player->ip_adress }}

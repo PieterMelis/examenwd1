@@ -66,10 +66,11 @@ class PlayerController extends Controller
         Excel::create('players', function($excel)
         {
             $excel->sheet('players', function($playersExcel) {
-                $playersExcel->fromArray(Players::all(), null, 'A4', false, false);
+
+                $playersExcel
+                    ->fromArray(Players::all(), null, 'A4', false, false);
             });
-        })
-            ->download('xls');
+        })->download('xls');
     }
 
 

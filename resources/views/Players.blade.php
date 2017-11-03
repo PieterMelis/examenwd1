@@ -10,7 +10,7 @@
 
     @if (Session::has('message'))
         <div class="alert alert-info">{{ Session::get('message') }}</div>
-    @endif
+   3 @endif
 
     {!! Form::open(array('url' => array('downloadExel'), 'method' => 'post')) !!}
     {{ Form::submit('Download Excel', array('class' => 'button pull-right')) }}

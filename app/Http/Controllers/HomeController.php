@@ -45,17 +45,14 @@ class HomeController extends Controller
             'email'      => 'required|email|unique:players|max:50',
             'adress'     => 'required|max:50' ,
             'city'       => 'required|max:50',
-            'word'       => 'required|max:50'
+            'word'       => 'required|max:50',
+            'count'       => 'required|max:50'
         );
         $validator = Validator::make(Input::all(), $rules);
-
-
         if ($validator->fails()) {
             return Redirect::back()
                 ->withErrors($validator);
         } else {
-
-
             foreach ($periods as $key => $value) {
                 if ($value->startdate <= $time && $time <= $value->enddate) {
                     $period = $value->periodname;
@@ -67,14 +64,16 @@ class HomeController extends Controller
             $player->adress     = Input::get('adress');
             $player->city       = Input::get('city');
             $player->word       = Input::get('word');
+            $player->count       = Input::get('count');
             $player->enabled    = 1;
             $player->period     = $period;
             $player->ip_adress  = $req->ip();
             $player->save();
         }
-        Session::flash('message', 'Dank u voor het meedoen');
+        Session::flash('message', 'Thanks for your participation');
         return Redirect::back();;
     }
+
 
 
 

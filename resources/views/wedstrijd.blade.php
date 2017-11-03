@@ -9,11 +9,13 @@
                 @foreach($question as $key => $value)
                     @if($value->id === 1)
                         <h1>{{$value->question }}</h1>
+                        You can participate until {{$dTime}}
                     @else
                         <div>No questions found</div>
                     @endif
                 @endforeach
-                    You can participate until {{$dTime}}
+
+
             </div>
         </div>
     </div>
@@ -57,6 +59,12 @@
         {{ Form::label('word', 'Answer') }}
         {{ Form::text('word',  Input::old('word'), array('class' => 'form-control') )}}
     </div>
+
+    <div class="form-group">
+        {{ Form::label('count', 'How many people participated in this period?') }}
+        {{ Form::text('count',  Input::old('count'), array('class' => 'form-control') )}}
+    </div>
+
 
     {{ Form::submit('Verzenden', array( 'class' => 'button')) }}
 
