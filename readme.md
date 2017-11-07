@@ -1,6 +1,6 @@
 # DESCRIPTION
 - Author : [Pieter Melis ](https://github.com/PieterMelis "Title")
-- A fictional school project: A contest to win new volvo.
+- A fictional school project: A contest to win the new volvo car.
 - The online version [version][id]. 
 
 
