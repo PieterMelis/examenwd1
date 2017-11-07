@@ -74,7 +74,7 @@ class winnerR extends Command
                     $winner->save();
 
 
-                    Mail::raw("The winner of ". $period ." is ". $endWinner['name'], function($message)
+                    Mail::raw("The winner of ". $period ." is ". $endWinner['name']."(".$endWinner['name'].")", function($message)
                     {
                         $message->subject('Winner of the period' );
 

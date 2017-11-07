@@ -5,7 +5,7 @@
 
 
 <div class="container">
-    <a href="{{ URL::previous() }}" class="button tiny ">
+    <a href="{{ URL::to('home') }}" class="button tiny ">
         <i class="material-icons">&#xE314;</i></a>
     <br>
                 <table class="table-expand">

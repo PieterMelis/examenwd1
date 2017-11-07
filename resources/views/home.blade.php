@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <a href="{{ URL::previous() }}" class="button tiny ">
+    <a href="{{ url('/') }}" class="button tiny ">
         <i class="material-icons">&#xE314;</i></a>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

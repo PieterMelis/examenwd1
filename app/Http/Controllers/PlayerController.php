@@ -68,7 +68,7 @@ class PlayerController extends Controller
             $excel->sheet('players', function($playersExcel) {
 
                 $playersExcel
-                    ->fromArray(Players::all(), null, 'A4', false, false);
+                    ->fromArray(Players::where('enabled',1)->get(), null, 'A4', false, false);
             });
         })->download('xls');
     }

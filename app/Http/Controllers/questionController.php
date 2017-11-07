@@ -93,7 +93,7 @@ class questionController extends Controller
                         $winner->save();
 
 
-                        Mail::raw("The winner of ". $period ." is ". $endWinner['name'], function($message)
+                    Mail::raw("The winner of ". $period ." is ". $endWinner['name']."  (".$endWinner['email'].")", function($message)
                         {
                             $message->subject('Winner of the period' );
 

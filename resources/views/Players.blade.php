@@ -4,13 +4,13 @@
 
 
 <div class="container">
-    <a href="{{ URL::previous() }}" class="button tiny ">
+    <a href="{{ URL::to('home') }}" class="button tiny ">
         <i class="material-icons">&#xE314;</i></a>
     <h1>View players</h1>
 
     @if (Session::has('message'))
         <div class="alert alert-info">{{ Session::get('message') }}</div>
-   3 @endif
+    @endif
 
     {!! Form::open(array('url' => array('downloadExel'), 'method' => 'post')) !!}
     {{ Form::submit('Download Excel', array('class' => 'button pull-right')) }}

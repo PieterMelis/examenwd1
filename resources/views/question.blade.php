@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <a href="{{ URL::previous() }}" class="button tiny ">
+        <a href="{{ URL::to('home') }}" class="button tiny ">
             <i class="material-icons">&#xE314;</i></a>
         @if (Session::has('message'))
             <div class="alert alert-info">{{ Session::get('message') }}</div>

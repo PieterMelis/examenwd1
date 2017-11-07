@@ -21,7 +21,7 @@
     </div>
 
 <div class="container">
-    <a href="{{ URL::previous() }}" class="button tiny ">
+    <a href="{{ url('/') }}" class="button tiny ">
         <i class="material-icons">&#xE314;</i></a>
 
     @if (Session::has('message'))

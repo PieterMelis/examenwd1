@@ -46,7 +46,7 @@ class HomeController extends Controller
             'adress'     => 'required|max:50' ,
             'city'       => 'required|max:50',
             'word'       => 'required|max:50',
-            'count'       => 'required|max:50'
+            'count'       => 'required|max:1000000|Integer'
         );
         $validator = Validator::make(Input::all(), $rules);
         if ($validator->fails()) {
