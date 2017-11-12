@@ -1,11 +1,12 @@
-# DESCRIPTION
+# *DESCRIPTION*
 - Author : [Pieter Melis ](https://github.com/PieterMelis "Title")
 - A fictional school project: A contest to win the new volvo car.
-- The online version [version][id]. 
+- The online [version][id]. 
 
+___
+___
+___
 
-
-## Deploy this project
 - Clone or download this repository
 - Make database with phpmyadmin
 - Create a .env file and add your database information
@@ -18,6 +19,9 @@
 
 ### Done !
 
+___
+___
+___
 
 
 [id]: https://volvo.pietermelis.be/  "Title"
